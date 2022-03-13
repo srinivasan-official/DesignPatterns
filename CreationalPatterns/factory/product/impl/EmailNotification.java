@@ -1,6 +1,6 @@
-package factory.service.impl;
+package factory.product.impl;
 
-import factory.service.Notification;
+import factory.product.Notification;
 
 public class EmailNotification implements Notification {
 

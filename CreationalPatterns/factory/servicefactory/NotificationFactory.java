@@ -1,10 +1,10 @@
 package factory.servicefactory;
 
 import factory.constants.SupportedNotificationServices;
-import factory.service.Notification;
-import factory.service.impl.EmailNotification;
-import factory.service.impl.PushNotification;
-import factory.service.impl.SMSNotification;
+import factory.product.Notification;
+import factory.product.impl.EmailNotification;
+import factory.product.impl.PushNotification;
+import factory.product.impl.SMSNotification;
 
 public class NotificationFactory {
 	public static Notification getInstance(SupportedNotificationServices notificationType) throws Exception {

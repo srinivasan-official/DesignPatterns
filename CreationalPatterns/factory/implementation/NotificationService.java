@@ -1,7 +1,7 @@
 package factory.implementation;
 
 import factory.constants.SupportedNotificationServices;
-import factory.service.Notification;
+import factory.product.Notification;
 import factory.servicefactory.NotificationFactory;
 
 public class NotificationService {
