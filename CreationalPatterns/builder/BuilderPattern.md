@@ -1,0 +1,2 @@
+Builder is a creational design pattern that lets you construct complex object step by step.
+This pattern allows you to produce different types(Car, CarManual) and representation of object(Sports Car, City Car and SUV car) with same construction code.
