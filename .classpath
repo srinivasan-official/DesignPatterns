@@ -4,5 +4,6 @@
 	<classpathentry kind="src" path="CreationalPatterns"/>
 	<classpathentry kind="src" path="StructuralPatterns"/>
 	<classpathentry kind="src" path="BehavioralPatterns"/>
+	<classpathentry kind="src" path="ConcurrencyPatterns"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
