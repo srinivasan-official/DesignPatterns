@@ -12,10 +12,14 @@ public class Producer implements Runnable {
 
 	@Override
 	public void run() {
-		while(mediator.getExecutionStatus()) {
-			num = (int)(Math.random()*100);
-			mediator.storeMessage(num);
-			Buffer.sbf.append("p" + id + " - " + num + "\n");
+		try {
+			while(mediator.getExecutionStatus()) {
+				num = (int)(Math.random()*100);
+				mediator.storeMessage(num);
+				Buffer.sbf.append("p" + id + " - " + num + "\n");
+			}
+		} catch(Exception e) {
+			System.err.println(e.getMessage());
 		}
 	}
 }

@@ -17,7 +17,7 @@ public class Mediator {
 		this.execute = !execute;
 	}
 	
-	public synchronized void storeMessage(int num) {
+	public synchronized void storeMessage(int num) throws Exception {
 		while(slotFull) {
 			pauseThread();
 		}
@@ -26,7 +26,7 @@ public class Mediator {
 		this.number = num;
 	}
 	
-	public synchronized int retrieveMessage() {
+	public synchronized int retrieveMessage() throws Exception {
 		while(!slotFull) {
 			pauseThread();
 		}
@@ -36,11 +36,11 @@ public class Mediator {
 		return curNum;
 	}
 	
-	private void pauseThread() {
+	private void pauseThread() throws Exception {
 		try {
 			wait();
 		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
+			throw new Exception(Thread.currentThread().getName() + " Execution interrupted");
 		}
 	}
 }

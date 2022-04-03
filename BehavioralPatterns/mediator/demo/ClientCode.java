@@ -30,8 +30,13 @@ public class ClientCode {
 		mediator.toggleExecution();
 		sc.close();
 		for (Thread p : threads) {
-			System.out.println(p.getState());
+			while(p.isAlive()) {
+				p.interrupt();
+				Thread.sleep(1000);
+			}
+			System.out.println(p.getName() + " " + p.getState());
 		}
+		Thread.sleep(2000);
 		System.out.println(Buffer.sbf.toString());
 	}
 

@@ -11,9 +11,13 @@ public class Consumer implements Runnable {
 	
 	@Override
 	public void run() {
-		while(mediator.getExecutionStatus()) {
-			int number = mediator.retrieveMessage();
-			Buffer.sbf.append("c" + id + " - " + number + "\n");
+		try {
+			while(mediator.getExecutionStatus()) {
+				int number = mediator.retrieveMessage();
+				Buffer.sbf.append("c" + id + " - " + number + "\n");
+			}
+		} catch(Exception e) {
+			System.out.println(e.getMessage());
 		}
 	}
 
